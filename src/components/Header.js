@@ -1,8 +1,15 @@
-const Header = (props) => {
+import Button from "./bs-components/Button";
+
+const Header = () => {
+
+    const onClick = () => {
+        console.log('Clicked');
+    }
+
     return (
-        <header className={'border bg-light text-center'}>
+        <header className={'border bg-light p-2 text-center d-flex justify-content-between'}>
             <h1 className={'text-primary'}>Todos App</h1>
-            <h2 className={'text-muted'}>{props.subtitle}</h2>
+            <Button text={'Add'} color={'success'} onClick={onClick} />
         </header>
     );
 };

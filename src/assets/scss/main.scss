@@ -1,5 +1,6 @@
 // Override default variables before the import
-//$body-bg: #000;
+//$btn-padding-y-sm: 0;
+//$btn-line-height: 0;
 
-// Import Bootstrap and its default variables
+  // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
