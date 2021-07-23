@@ -20,6 +20,13 @@ function App() {
         }
     ])
 
+    const addTodo = (todo) => {
+        const id = Math.floor(Math.random() * 100000) + 1
+        const done = false
+        const newTodo = {id, done, ...todo}
+        setTodos([...todos, newTodo])
+    }
+
     const deleteTodo = (id) => {
         setTodos(todos.filter((todo) => todo.id !== id))
     }
@@ -34,13 +41,13 @@ function App() {
     return (
         <div className={"container-fluid"}>
             <Header />
-            <AddTodo />
+            <AddTodo onAdd={addTodo} />
+            <hr />
             <div className={'my-3'}>
             {todos.length > 0 ?
                 <TodoList todos={todos} onDelete={deleteTodo} onToggle={toggleTodo}/> :
                 <p className={'alert alert-success text-center lead fw-bold'}>Yay, you're done! ;)</p>
             }
-            <a href={'https://youtu.be/w7ejDZ8SWv8?t=3721'}>Tutorial hier!</a>
             </div>
         </div>
     );
