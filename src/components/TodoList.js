@@ -1,4 +1,4 @@
-import Button from "./bs-components/Button";
+import {Button} from "react-bootstrap";
 
 const TodoList = ({todos, onDelete, onToggle}) => {
     return (
@@ -10,8 +10,8 @@ const TodoList = ({todos, onDelete, onToggle}) => {
                         <p>{todo.body}</p>
                     </div>
                     <div>
-                        <Button onClick={() => onToggle(todo.id)} color={(todo.done) ? 'success' : 'secondary'} text={'Done'} css={'btn-sm me-1'} />
-                        <Button onClick={() => onDelete(todo.id)} color={'danger'} text={'Delete'} css={'btn-sm'} />
+                        <Button variant={(todo.done) ? 'success' : 'secondary'} size={'sm'} className={'me-2'} onClick={() => onToggle(todo.id)}>{(todo.done) ? 'Done' : 'Undone'}</Button>
+                        <Button variant={'danger'} size={'sm'} onClick={() => onDelete(todo.id)}>Delete</Button>
                     </div>
                 </li>
             ))}

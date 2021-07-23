@@ -1,6 +1,7 @@
 import {useState} from "react";
 import Header from "./components/Header";
 import TodoList from "./components/TodoList";
+import AddTodo from "./components/AddTodo";
 
 function App() {
 
@@ -33,11 +34,13 @@ function App() {
     return (
         <div className={"container-fluid"}>
             <Header />
+            <AddTodo />
             <div className={'my-3'}>
             {todos.length > 0 ?
                 <TodoList todos={todos} onDelete={deleteTodo} onToggle={toggleTodo}/> :
                 <p className={'alert alert-success text-center lead fw-bold'}>Yay, you're done! ;)</p>
             }
+            <a href={'https://youtu.be/w7ejDZ8SWv8?t=3721'}>Tutorial hier!</a>
             </div>
         </div>
     );
